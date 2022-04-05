@@ -33,6 +33,8 @@ class SLL {
             }
             console.log(arr);
         }
+
+        return this
     }
     
     
@@ -49,7 +51,7 @@ class SLL {
             this.head = newNode
         }
         this.sll_length++
-        
+        return this
     }
     // Add a node to the list
     // The first value MUST be the head
@@ -71,6 +73,8 @@ class SLL {
             runner.next = new Node(val);
         }
         this.sll_length++
+
+        return this
     }
 
     // Remove and return the head node from your list (remember this means we need a new head)
@@ -86,7 +90,7 @@ class SLL {
         return temp.val
     }
 
-    sumAllVal(){
+    sumAll(){
         if (!this.isEmpty()){
             var runner = this.head
             var sum = 0
@@ -100,11 +104,9 @@ class SLL {
             return 0
         }
     }
-    sllAvg(){
+    average(sum=this.sumAll(),total=this.sll_length){
         if (!this.isEmpty()){
-            var sum = this.sumAllVal()
-            var avg = sum / this.sll_length
-            return avg
+            return sum / total
         }
         else{
             return 0
@@ -127,8 +129,8 @@ mySll.removeHead()
 mySll.toPrint();
 mySll.InsertAtFront(55)
 mySll.toPrint();
-console.log(mySll.sumAllVal())
-console.log(mySll.sllAvg())
+console.log(mySll.sumAll())
+console.log(mySll.average())
 
 
 var sll2 = new SLL();
