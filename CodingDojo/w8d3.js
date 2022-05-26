@@ -2,6 +2,12 @@
 //return the newly combined array
 //bonus challenge: combine in place into leftArr instead of a new array
 const combine = (leftArr, rightArr) => {
+	if (leftArr.length === 0) {
+		return rightArr;
+	}
+	if (rightArr.length === 0) {
+		return leftArr;
+	}
 	// push the rightArr value to leftArr
 	for (let i = 0; i < rightArr.length; i++) {
 		leftArr.push(rightArr[i]);
@@ -20,6 +26,7 @@ const combine = (leftArr, rightArr) => {
 
 // should return [0,1,2,3,4,6,7,9,11]
 console.log(combine([1, 2, 7, 9], [0, 3, 4, 6, 11]));
+console.log(combine([0, 3, 4, 6, 11], [1, 2, 7, 9]));
 
 // should return [0,1]
 console.log(combine([1], [0]));
